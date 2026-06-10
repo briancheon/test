@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEON BREAKOUT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="game-wrap">
+    <header class="hud">
+      <div class="hud-item">SCORE <span id="score">0</span></div>
+      <h1 class="title">NEON&nbsp;BREAKOUT</h1>
+      <div class="hud-item">LIVES <span id="lives">♥♥♥</span></div>
+    </header>
+    <div class="canvas-frame">
+      <canvas id="game" width="800" height="560"></canvas>
+      <div id="overlay" class="overlay">
+        <h2 id="overlay-title">NEON BREAKOUT</h2>
+        <p id="overlay-msg">Move with mouse or ← → keys<br>Press SPACE or click to launch</p>
+        <button id="start-btn">PLAY</button>
+      </div>
+    </div>
+    <footer class="hint">mouse / arrow keys to move &nbsp;•&nbsp; space to launch &nbsp;•&nbsp; p to pause</footer>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
