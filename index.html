@@ -1,29 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEON BREAKOUT</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>속보 - 실시간 뉴스</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="stars"></div>
-  <div class="game-wrap">
-    <header class="hud">
-      <div class="hud-item">SCORE <span id="score">0</span></div>
-      <h1 class="title">NEON&nbsp;BREAKOUT</h1>
-      <div class="hud-item">LIVES <span id="lives">♥♥♥</span></div>
-    </header>
-    <div class="canvas-frame">
-      <canvas id="game" width="800" height="560"></canvas>
-      <div id="overlay" class="overlay">
-        <h2 id="overlay-title">NEON BREAKOUT</h2>
-        <p id="overlay-msg">Move with mouse or ← → keys<br>Press SPACE or click to launch</p>
-        <button id="start-btn">PLAY</button>
+  <!-- 상단 헤더 -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="date" id="date"></span>
+      <span class="live"><span class="dot"></span> LIVE</span>
+    </div>
+  </header>
+
+  <div class="masthead">
+    <h1 class="logo">속보<span>24</span></h1>
+    <nav class="nav">
+      <a href="#">정치</a>
+      <a href="#">사회</a>
+      <a href="#">경제</a>
+      <a href="#">국제</a>
+      <a href="#">연예</a>
+      <a href="#">스포츠</a>
+    </nav>
+  </div>
+
+  <!-- 속보 띠 -->
+  <div class="breaking-strip">
+    <span class="breaking-label">긴급속보</span>
+    <div class="ticker">
+      <div class="ticker-move">
+        전국 곳곳 이상 현상 신고 접수 &nbsp;•&nbsp; 정부 긴급 대책회의 소집 &nbsp;•&nbsp; 전문가 "원인 분석 중" &nbsp;•&nbsp; 시민 제보 영상 화제 &nbsp;•&nbsp; 자세한 내용은 아래 기사 참조
       </div>
     </div>
-    <footer class="hint">mouse / arrow keys to move &nbsp;•&nbsp; space to launch &nbsp;•&nbsp; p to pause</footer>
   </div>
+
+  <main class="container">
+    <!-- 메인 기사 -->
+    <article class="lead" data-scare>
+      <div class="lead-tag">단독</div>
+      <div class="lead-img">📺</div>
+      <h2>[단독] 오늘 새벽 전국에서 동시 다발 목격된 정체불명의 현상… 당국 "조사 착수"</h2>
+      <p>오늘 새벽 2시경부터 전국 각지에서 비슷한 제보가 잇따르고 있다. 목격자들은 하나같이 "믿기 힘든 장면을 봤다"고 입을 모았다.</p>
+      <button class="read-more">기사 전문 보기 ▶</button>
+    </article>
+
+    <section class="grid">
+      <article class="card" data-scare>
+        <div class="card-img">🔴</div>
+        <h3>제보 영상 단독 입수… "직접 보면 소름 돋아"</h3>
+        <p>현장에서 촬영된 영상이 온라인에서 빠르게 확산되고 있다.</p>
+        <button class="read-more">영상 보기</button>
+      </article>
+
+      <article class="card" data-scare>
+        <div class="card-img">🏠</div>
+        <h3>화장실에서 발견된 충격적인 장면… 주민 신고 잇따라</h3>
+        <p>한 아파트 주민이 화장실에서 목격한 장면을 두고 논란이 일고 있다.</p>
+        <button class="read-more">사진 보기</button>
+      </article>
+
+      <article class="card" data-scare>
+        <div class="card-img">🚨</div>
+        <h3>전문가 "이런 사례는 처음"… 긴급 분석 돌입</h3>
+        <p>관계 당국이 정밀 조사에 들어갔다고 밝혔다.</p>
+        <button class="read-more">자세히 보기</button>
+      </article>
+    </section>
+
+    <aside class="most-read">
+      <h4>많이 본 뉴스</h4>
+      <ol>
+        <li data-scare>새벽 2시, 그 일이 시작됐다</li>
+        <li data-scare>목격자 인터뷰 전문 공개</li>
+        <li data-scare>"다시는 화장실 못 갈 것 같다"</li>
+        <li data-scare>실시간 제보 폭주 중</li>
+      </ol>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 속보24 | 본 사이트는 장난(프랭크)용으로 제작되었습니다.</p>
+  </footer>
+
+  <!-- 점프스케어 오버레이 -->
+  <div class="jumpscare" id="jumpscare" aria-hidden="true">
+    <img src="scary.png" alt="">
+    <div class="scare-text">잡았다!</div>
+  </div>
+
   <script src="game.js"></script>
 </body>
 </html>
